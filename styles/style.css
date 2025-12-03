@@ -223,7 +223,7 @@ section {
     width: 100%;
     height: 45rem;
     overflow: hidden;
-    background: url('/imgs/fundohome.png');
+    background: url('../imgs/fundohome.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -248,7 +248,7 @@ section {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    background-image: url("/imgs/fundo2.png");
+    background-image: url("../imgs/fundo2.png");
     background-size: contain;
     background-position: right;
     background-repeat: no-repeat;
@@ -262,7 +262,7 @@ section {
     width: 520px;
     height: 100%;
     margin-top: -10px;
-    background-image: url("/imgs/tinta.png");
+    background-image: url("../imgs/tinta.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -311,7 +311,7 @@ section {
 #partido-conservador {
     width: 100%;
     height: 65rem;
-    background: url('/imgs/fundoconserv.png') center/cover no-repeat;
+    background: url('../imgs/fundoconserv.png') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -375,7 +375,7 @@ section {
     width: 100%;
     height: 65rem;
     overflow: hidden;
-    background: url('/imgs/fundoconservador2.png');
+    background: url('../imgs/fundoconservador2.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -395,7 +395,7 @@ section {
     width: 100%;
     height: 70rem;
     overflow: hidden;
-    background: url('/imgs/fundopicos.png');
+    background: url('../imgs/fundopicos.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -510,7 +510,7 @@ section {
     width: 100%;
     height: 80rem;
     overflow: hidden;
-    background-image: url('/imgs/patrulha.png')
+    background-image: url('../imgs/patrulha.png')
 }
 
 /*Section 8 - Fim do Tráfico*/
