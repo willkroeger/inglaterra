@@ -1,0 +1,583 @@
+/*Menu Hamburguer*/
+/*Define a posição absoluta para a caixa representando o menu*/
+.menu-hamburguer {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    z-index: 10000000;
+}
+
+/*Esconde o ícone da checkbox*/
+#menu-toggle {
+    display: none; 
+}
+
+/*Define a área do menu*/
+.menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 260px;
+    height: 100vh;
+    background: #111;
+    padding: 120px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 1000;
+    /*Leva os elementos do menu e ele próprio para além da tela*/
+    transform: translateX(100%);
+    transition: 0.35s ease;
+}
+
+/*Define a área para o ícone do menu*/
+.menu-icon {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    width: 32px;
+    height: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    z-index: 1001;
+    cursor: pointer;
+}
+
+/*Define as linhas do ícone */
+.linha {
+    display: block;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+    transition: 0.3s ease-out;   
+}
+
+/*Linha de cima maior*/
+.linha:first-child {
+    width: 32px;
+}
+
+/*Linha de baixo menor*/
+.linha:last-child {
+    width: 16px;
+}
+
+/*Animação*/
+#menu-toggle:checked ~ .menu {
+    transform: translateX(0);
+}
+
+#menu-toggle:checked + .menu-icon .linha:first-child {
+    transform: rotate(45deg) translate(12px, 12px);
+}
+
+#menu-toggle:checked + .menu-icon .linha:last-child {
+    transform: rotate(-45deg) translate(2px, -2px);
+    width: 32px;
+}
+
+/*Estilizando os links*/
+.menu ul {
+    list-style: none;
+}
+
+.menu a {
+    color: #f0e9d0;
+    font-size: 20px;
+    font-family: "Bebas Neue", sans-serif;
+    text-decoration: none;
+    transition: 0.25s;
+    font-weight: 300;
+}
+
+.menu a:hover {
+    color: #fde88d;
+    margin-left: 8px;
+}
+
+/*Fontes*/
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.be-vietnam-pro-regular {
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*Texto*/
+h1,
+h2 {
+    font-family: "Bebas Neue", sans-serif;
+    color: #ffffff;
+}
+
+h1 {
+    font-size: 220px;
+    letter-spacing: 10px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    -webkit-text-stroke: 0px transparent;
+}
+
+h1:hover {
+    color: transparent;
+    -webkit-text-stroke: 2px #ffffff;
+    cursor: pointer;
+}
+
+h2 {
+    font-size: 140px;
+    transition: all 0.5s ease;
+    -webkit-text-stroke: 0px transparent;
+    font-weight: 500;
+}
+
+h2:hover {
+    color: transparent;
+    -webkit-text-stroke: 1.5px #ffffff;
+    cursor: pointer;
+}
+
+h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 35px;
+    text-decoration: underline;
+    /*Aplica sublinhado ao texto*/
+    text-decoration-thickness: 1px;
+    text-underline-offset: 10px;
+    /*Espaçamento entre o sublinhado e o texto*/
+    color: #ffffff;
+    font-weight: 300;
+}
+
+p {
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-size: 24px;
+    word-spacing: 5px;
+    line-height: 32px;
+    color: #ffffff;
+}
+
+hr {
+    margin: 0 auto 35px auto;
+    width: 75%;
+}
+
+/*Styles*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*Fundo da página*/
+body {
+    background-color: black;
+    overflow-x: hidden;
+}
+
+/*Main - Abriga todas as sections em um esquema vertical e flexível*/
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+/*Ajusta o tamanho dos containers das sections*/
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100vw;
+    height: 100vh;
+}
+
+/*Container: aplica display flex ao conteúdo*/
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100vw;
+    gap: 150px;
+}
+
+/*Imagens de Fundo*/
+/*Section 1 - Home*/
+#home-section {
+    padding-top: 0;
+    position: relative;
+    width: 100%;
+    height: 45rem;
+    overflow: hidden;
+    background: url('/imgs/fundohome.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*Divisão entre a primeira e a segunda section*/
+#division {
+    position: absolute;
+    left: 0;
+    top: 41rem;
+    width: 100%;
+    z-index: 1000;
+    background-image: url('/imgs/div/papeis.png');
+    height: 126px;
+}
+
+/*Section 2 - 1831*/
+#section-1831 {
+    position: relative;
+    width: 100%;
+    padding: 80px 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background-image: url("/imgs/fundo2.png");
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+.tinta {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 520px;
+    height: 100%;
+    margin-top: -10px;
+    background-image: url("/imgs/tinta.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.conteudo-1831 {
+    position: relative;
+    z-index: 2;
+    width: 450px;
+    color: #e5e0d3;
+    text-align: justify;
+    padding-left: 60px;
+}
+
+.conteudo-1831 h2 {
+    text-align: center;
+}
+
+.conteudo-1831 p {
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    font-weight: 100;
+}
+
+.btn {
+    display: block;
+    margin: 0 auto;
+    padding: 15px 50px;
+    font-size: 20px;
+    background-color: #948E72;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #7d775f;
+    cursor: pointer;
+}
+
+/*Section 3 - Partido Conservador I*/
+#partido-conservador {
+    width: 100%;
+    height: 65rem;
+    background: url('/imgs/fundoconserv.png') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4vw;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4vw;
+    max-width: 1200px;
+}
+
+.logo {
+    width: 24vw;
+    max-width: 400px;
+}
+
+.texto {
+    max-width: 40vw;
+    color: #fff;
+    font-weight: 100;
+}
+
+.texto h1 {
+    font-size: 7rem;
+    font-weight: 500;
+    line-height: 0.9;
+}
+
+.texto p {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.btn-conservador {
+    display: block;
+    margin: 2rem auto 0 auto;
+    padding: 15px 60px;
+    width: fit-content;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-size: 24px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #948E72;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-conservador:hover {
+    background-color: #7a755e;
+    transition: 0.3s ease;
+}
+
+/*Section 4 - Partido Conservador II*/
+.conservador2-section {
+    padding-top: 0;
+    position: relative;
+    width: 100%;
+    height: 65rem;
+    overflow: hidden;
+    background: url('/imgs/fundoconservador2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#rabisco {
+    width: 80%;
+    height: auto;
+    pointer-events: none;
+    align-self: center;
+}
+
+/*Section 5 - Picos do Tráfico*/
+#picos-section {
+    padding-top: 0;
+    position: relative;
+    width: 100%;
+    height: 70rem;
+    overflow: hidden;
+    background: url('/imgs/fundopicos.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Section 6 - Bill Aberdeen (já escrevo linhas sem sentidos na madrugada cansativa)*/
+#bill-section {
+    padding-top: 0;
+    position: relative;
+    width: 100%;
+    height: 78rem;
+    overflow: hidden;
+    perspective: 1000px;
+}
+
+#bill-section .bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/imgs/fundobill.png');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+#bill-section .estrela {
+    position: absolute;
+    top: 200px;
+    right: 300px;
+    width: 250px;
+    height: 270px;
+    z-index: 4;
+    user-select: none;
+    pointer-events: none;
+    animation: blink 1.2s infinite alternate ease-in-out;
+}
+
+/* Keyframes da animação de piscar */
+@keyframes blink {
+    0% {
+        opacity: 1;
+        transform: scale(1.1) translate(0px, 0px) rotate(0deg);
+    }
+
+    50% {
+        opacity: 0.4;
+        transform: scale(1.1) translate(-10px, -10px) rotate(-3deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1.1) translate(0px, 0px) rotate(6deg);
+    }
+}
+
+#bill-section .bill-img {
+    position: absolute;
+    bottom: 0;
+    right: -10px;
+    margin-left: 300px;
+    transform: scale(2.05);
+    margin-left: 200px;
+    user-select: none;
+    transform-origin: bottom right;
+    z-index: 3;
+    pointer-events: none;
+}
+
+#perspective-container {
+    position: absolute;
+    top: 65px;
+    left: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    z-index: 2;
+    perspective: 900px;
+    transform-style: preserve-3d;
+    transform: rotateY(65deg) rotateX(-6deg) rotateZ(-7deg);
+    font-family: "Bebas Neue", sans-serif;
+    line-height: 260px;
+    letter-spacing: 5px;
+    transform-origin: left top;
+}
+
+.perspective-text {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 300px;
+    font-weight: 500;
+    color: white;
+    line-height: 260px;
+    letter-spacing: 5px;
+
+    transform-origin: left top;
+    -webkit-text-stroke: 0px transparent;
+}
+
+.perspective-text:hover {
+    color: transparent;
+    -webkit-text-stroke: 1.5px #ffffff;
+    cursor: pointer;
+}
+
+::selection {
+    background-color: #5a5a5a7b;
+    color: white;
+    -webkit-text-stroke: 0px;
+}
+
+/*Section 7 - 1845*/
+.bill-section2 {
+    position: relative;
+    width: 100%;
+    height: 80rem;
+    overflow: hidden;
+    background-image: url('/imgs/patrulha.png')
+}
+
+/*Section 8 - Fim do Tráfico*/
+#fim {
+    position: relative;
+    width: 100%;
+    height: 70rem;
+    overflow: hidden;
+    background-image: url('/imgs/fundofim.png');
+    background-size: cover;
+    z-index: 1;
+}
+
+.fim h2 {
+    margin: 0;
+    font-size: 200px;
+    text-align: center;
+}
+
+/*Box: cria uma caixa pai com elementos ajustáveis a partir da section escolhida*/
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+img {
+    height: 100%;
+    max-height: 35vw;
+    width: auto;
+}
+
+#foto1, #traffic-img  {
+    transform: rotate(0) scale(1);
+    transform-origin: center center;
+    transition: 0.3s ease;
+}
+
+#foto1:hover, #traffic-img:hover {
+    transform: rotate(1deg) scale(1.01);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+/*Rodapé*/
+.footer {
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+
+.footer .content p {
+    margin: 5px 0;
+    font-size: 14px;
+    line-height: 30px;
+    transition: 0.3s ease;
+    flex-direction: column;
+    align-items: center;   
+}
+
+.footer .content p:hover {
+    color: #6e6e6e;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
